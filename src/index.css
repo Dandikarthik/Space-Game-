@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+  animation-delay: calc(var(--tw-translate-x) * 0.1s);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+.rocket {
+  position: absolute;
+  opacity: 0.2;
+  animation: float 8s ease-in-out infinite;
+  filter: blur(1px);
+  z-index: 0;
+}
+
+.rocket:nth-child(2n) {
+  animation-duration: 12s;
+  animation-delay: -4s;
+}
+
+.rocket:nth-child(3n) {
+  animation-duration: 10s;
+  animation-delay: -2s;
+}
+
+@keyframes timer-progress {
+  from { width: 100%; }
+  to { width: 0%; }
+}
